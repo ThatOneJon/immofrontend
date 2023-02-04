@@ -1,0 +1,11 @@
+Model Information:
+* title:	Paimio Sanatorium
+* source:	https://sketchfab.com/3d-models/paimio-sanatorium-edadc72f28e84eceb7e0df6dc04fee9c
+* author:	Lassi Kaukonen (https://sketchfab.com/thesidekick)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Paimio Sanatorium" (https://sketchfab.com/3d-models/paimio-sanatorium-edadc72f28e84eceb7e0df6dc04fee9c) by Lassi Kaukonen (https://sketchfab.com/thesidekick) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
