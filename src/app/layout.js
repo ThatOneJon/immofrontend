@@ -1,12 +1,11 @@
 "use client"
 import './globals.css'
-import styles from './page.module.css'
 import Skull from "next/image"
 import React from "react"
 import Link from "next/link"
 import { FaLock, FaLockOpen } from 'react-icons/fa'
 import Login from "./login"
-import Register from "./Register"
+import Register from "./register"
 
 
 export default function RootLayout({ children }) {
