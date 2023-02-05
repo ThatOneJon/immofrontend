@@ -25,7 +25,7 @@ export default function Home() {
       <div className="h-full md:h-128 text-center">
             <h1 className={`mt-3 mb-4 text-4xl bg-custom text-white rounded py-5`}>Concrete Blocks are our passion !</h1>
             <div className="h-96 w-full lg:h-4/5 bg-neutral-900 mt-1 rounded">
-              <p className="text-white text-left text-xs">3D model by: "Lassi Kaukonen" on "https://sketchfab.com/thesidekick"</p>
+              <p className="text-white text-left text-xs">3D model by: Lassi Kaukonen on https://sketchfab.com/thesidekick</p>
                 <Canvas
                   shadows={true}
                   camera={{
