@@ -43,7 +43,7 @@ export default function Home() {
             <div className="bg-slate-900 w-full h-full grid lg:grid-cols-2 gap-2 gid-cols-1 rounded">
               <div className="bg-slate-800 m-4 rounded relative">
                 <h1 className="text-white text-2xl mt-4">Work with our top architects, in order to build your own top tier soviet style concrete blocks!</h1>
-                  <div className="w-60 h-52 md:h-120 md:w-100 relative mx-auto">
+                  <div className="w-60 h-52 md:h-120 md:w-100 relative mx-auto hover:shadow-2xl hover:shadow-black hover:cursor-pointer">
                     <Image src="/plan.jpg" fill 
                     sizes ="(max-width:600px) 6vw, (max-width: 1200px) 40vw, 30vw" 
                     className="mx-auto my-4 rounded" alt="planning" />
@@ -52,7 +52,7 @@ export default function Home() {
               </div>
               <div className="bg-slate-800 m-3 rounded">
                 <h1 className="text-white text-2xl mt-4">Take a look at our inventory!</h1>
-                <div className="w-60 h-52 md:h-120 md:w-100 relative mx-auto">
+                <div className="w-60 h-52 md:h-120 md:w-100 relative mx-auto hover:shadow-2xl hover:shadow-black hover:cursor-pointer">
                   <Image src="/conc.jpg" fill 
                     sizes ="(max-width:600px) 6vw, (max-width: 1200px) 40vw, 30vw" 
                     className="mx-auto my-4 rounded" alt="planning" />
