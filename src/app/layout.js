@@ -53,7 +53,7 @@ export default function RootLayout({ children }) {
               </div>
             </div>
           </nav>
-          <main className="md:m-5 md:mx-20 py-3">
+          <main className="md:m-5 md:mx-20 py-1">
             {children}
           </main>
         </body>

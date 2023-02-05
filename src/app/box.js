@@ -1,7 +1,6 @@
 import React from "react";
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { useLoader } from "@react-three/fiber"
-import { OrbitControls } from "@react-three/drei"
 
 function Box(props) {
 
