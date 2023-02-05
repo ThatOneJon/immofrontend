@@ -1,6 +1,5 @@
 "use client"
 
-//import { Inter } from '@next/font/google'
 import { Canvas } from "@react-three/fiber";
 import Box from './box';
 import { OrbitControls } from "@react-three/drei"
@@ -13,17 +12,12 @@ function Loader() {
   return <Html center> <p className="text-white text-3xl">{progress} % loaded </p></Html>
 }
 
-//const inter = Inter({
-  //weight : ['800'],
-  //subsets: ['latin'] 
-//})
-
 export default function Home() {
 
   return (
 
       <div className="h-full md:h-128 text-center">
-            <h1 className={`mt-3 mb-4 text-4xl bg-custom text-white rounded py-5`}>Concrete Blocks are our passion !</h1>
+            <h1 className="mt-3 mb-4 text-4xl bg-custom text-white rounded py-5">Concrete Blocks are our passion !</h1>
             <div className="h-96 w-full lg:h-4/5 bg-neutral-900 mt-1 rounded">
               <p className="text-white text-left text-xs">3D model by: Lassi Kaukonen on https://sketchfab.com/thesidekick</p>
                 <Canvas
@@ -39,7 +33,7 @@ export default function Home() {
                       </Suspense>
                 </Canvas>
             </div>
-            <h1 className={`mt-3 mb-4 text-4xl bg-custom text-white rounded py-5 ${inter.className}`}>Looking to build, or to expand your portfolio?</h1>
+            <h1 className={`mt-3 mb-4 text-4xl bg-custom text-white rounded py-5`}>Looking to build, or to expand your portfolio?</h1>
             <div className="bg-slate-900 w-full h-full grid lg:grid-cols-2 gap-2 gid-cols-1 rounded mb-5">
               <div className="bg-slate-800 m-4 rounded relative">
                 <h1 className="text-white text-2xl mt-4">Work with our top architects, in order to build your own top tier soviet style concrete blocks!</h1>
