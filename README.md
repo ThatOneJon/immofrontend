@@ -3,5 +3,5 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 MERN - Stack
 
 ->  (Atlas) MongoDB React(NextJS13), Express, Node
-
 -> this will be the frontend
+--> Backend is not hooked up yet

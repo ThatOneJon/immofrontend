@@ -38,7 +38,7 @@ export default function RootLayout({ children }) {
               <div className={`${!menuT ? "hidden" : "block"} w-full md:block  md:h-1/2 md:w-1/2 md:mr-64 `} >
                 <ul className="text-xl md:text-2xl font-bold text-center flex flex-col p-4 mt-4 border rounded-lg  md:flex-row md:justify-evenly md:space-x-14 md:mt-0 md:font-medium md:border-0 text-white">
                   <li><Link href="#">Home</Link></li>
-                  <li><Link href="#">Listings</Link></li>
+                  <li><Link href="/listings">Listings</Link></li>
                   <li><Link href="/about">About</Link></li>
                   <button onClick = {() =>  setLoginMenu(pr => !pr)} id="dropdownDefaultButton">  <li className=" text-md p-0 m-0 ">{ loginMenu ? <FaLockOpen /> :<FaLock /> }</li></button>
                   <div className= {`${ loginMenu ? "flex" : "hidden"} text-lg font-bold py-1 bg-white divide-y divide-gray-100 rounded-lg shadow w-fit dark:bg-gray-700`}>

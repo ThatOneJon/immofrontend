@@ -40,7 +40,7 @@ export default function Home() {
                 </Canvas>
             </div>
             <h1 className={`mt-3 mb-4 text-4xl bg-custom text-white rounded py-5 ${inter.className}`}>Looking to build, or to expand your portfolio?</h1>
-            <div className="bg-slate-900 w-full h-full grid lg:grid-cols-2 gap-2 gid-cols-1 rounded">
+            <div className="bg-slate-900 w-full h-full grid lg:grid-cols-2 gap-2 gid-cols-1 rounded mb-5">
               <div className="bg-slate-800 m-4 rounded relative">
                 <h1 className="text-white text-2xl mt-4">Work with our top architects, in order to build your own top tier soviet style concrete blocks!</h1>
                   <div className="w-60 h-52 md:h-120 md:w-100 relative mx-auto hover:shadow-2xl hover:shadow-black hover:cursor-pointer">
