@@ -4,6 +4,7 @@ import Skull from "next/image"
 import React from "react"
 import Link from "next/link"
 import { FaLock, FaLockOpen } from 'react-icons/fa'
+import{RxAvatar} from "react-icons/rx"
 import Login from "./login"
 import Register from "./register"
 
@@ -39,6 +40,7 @@ export default function RootLayout({ children }) {
                   <li><Link href="#">Home</Link></li>
                   <li><Link href="/listings">Listings</Link></li>
                   <li><Link href="/about">About</Link></li>
+                  <li><Link href="/about"><RxAvatar className="text-4xl" /></Link></li>
                   <button onClick = {() =>  setLoginMenu(pr => !pr)} id="dropdownDefaultButton">  <li className=" text-md p-0 m-0 ">{ loginMenu ? <FaLockOpen /> :<FaLock /> }</li></button>
                   <div className= {`${ loginMenu ? "flex" : "hidden"} text-lg font-bold py-1 bg-white divide-y divide-gray-100 rounded-lg shadow w-fit dark:bg-gray-700`}>
                     <ul className={`${ loginMenu ? "flex" : "hidden"}  text-gray-700 dark:text-gray-200 px-2`}>

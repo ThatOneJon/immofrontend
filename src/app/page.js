@@ -17,7 +17,7 @@ export default function Home() {
 
   return (
 
-      <div className="h-full md:h-128 text-center">
+      <div className="h-full md:h-128 text-center font-serif">
             <h1 className="mt-3 mb-4 text-4xl bg-custom text-white rounded py-5">Concrete Blocks are our passion !</h1>
             <div className="h-96 w-full lg:h-4/5 bg-neutral-900 mt-1 rounded">
               <p className="text-white text-left text-xs">3D model by: Lassi Kaukonen on https://sketchfab.com/thesidekick</p>
@@ -39,9 +39,11 @@ export default function Home() {
               <div className="bg-slate-800 m-4 rounded relative">
                 <h1 className="text-white text-2xl mt-4">Work with our top architects, in order to build your own top tier soviet style concrete blocks!</h1>
                   <div className="w-60 h-52 md:h-120 md:w-100 relative mx-auto hover:shadow-2xl hover:shadow-black hover:cursor-pointer">
-                    <Image src="/plan.jpg" fill 
-                    sizes ="(max-width:600px) 6vw, (max-width: 1200px) 40vw, 30vw" 
-                    className="mx-auto my-4 rounded" alt="planning" />
+                    <Link href="/build">
+                      <Image src="/plan.jpg" fill 
+                      sizes ="(max-width:600px) 6vw, (max-width: 1200px) 40vw, 30vw" 
+                      className="mx-auto my-4 rounded" alt="planning" />
+                    </Link>
                   </div>
                 <p className="text-white mt-3">Photo by<a href="https://unsplash.com/pt-br/@ryanancill?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Ryan Ancill</a> on <a href="https://unsplash.com/de/fotos/aJYO8JmVodY?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></p>
               </div>

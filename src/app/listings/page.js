@@ -1,5 +1,10 @@
 
-import {GoChecklist} from "react-icons/Go"
+import {GoChecklist} from "react-icons/go"
+import { Suspense } from 'react';
+
+function Loading() {
+    return <h2>🌀 Loading...</h2>;
+  }
 
 export default async function Listings(){
     try{
@@ -8,7 +13,7 @@ export default async function Listings(){
     console.log(listJsons)
 
     return(
-        <>
+        <Suspense fallback={<Loading />} >
             <h1 className="flex flex-row justify-center text-center font-bold text-4xl my-5 border-slate-900 border-2 rounded bg-slate-300 py-3">Some of our current premium listings! <GoChecklist className="ml-4 text-5xl" /> </h1>
             <div className="flex flex-col lg:flex-row  justify-between ">
                 {listJsons.map(l => { 
@@ -25,7 +30,7 @@ export default async function Listings(){
             }
             </div>
             <p className="text-center font-bold text-4xl mt-5 py-2">Login to add your own listings...</p>
-        </>
+        </Suspense>
         )
     }
 

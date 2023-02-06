@@ -12,7 +12,7 @@ function Loader() {
 
 export default function About(){
     return(
-        <div className="h-screen w-full" >
+        <div className="h-screen w-full font-serif" >
             <div className="h-1/2 bg-slate-200 rounded">
             <Canvas shadows={true} camera={{ position: [4, 4, 5] }}>
                 <Suspense fallback={<Loader />}>
