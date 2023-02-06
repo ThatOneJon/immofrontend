@@ -27,7 +27,7 @@ export default function RootLayout({ children }) {
             <div className="flex flex-wrap items-center justify-between w-full ">
               <div className ="md:ml-32 ml-10 w-1/8 relative">
                 <div className="h-20 w-20 absolute opacity-40 rounded-full breathing ml-5 mt-3"></div>
-                <Skull className="object-scale-down ml-2" src="/Skull.png" alt ="aSkull" width="100" height="100" />
+                <Skull className="object-scale-down ml-2" src="/skull.png" alt ="aSkull" width="100" height="100" />
                 <h1 className = "text-white mt-3 text-lg font-bold">JC & Clarksons</h1>
               </div>
               <button onClick={() => setMenuT(p => !p)} type="button" className="inline-flex items-center p-2 ml-3 mr-10 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" >

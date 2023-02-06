@@ -1,11 +1,12 @@
 "use client"
-
+import './globals.css'
 import { Canvas } from "@react-three/fiber";
 import Box from './box';
 import { OrbitControls } from "@react-three/drei"
 import Image from "next/image"
 import { Html, useProgress } from '@react-three/drei'
 import { Suspense } from 'react'
+import Link from 'next/link';
 
 function Loader() {
   const { progress } = useProgress()
@@ -46,11 +47,13 @@ export default function Home() {
               </div>
               <div className="bg-slate-800 m-3 rounded">
                 <h1 className="text-white text-2xl mt-4">Take a look at our inventory!</h1>
-                <div className="w-60 h-52 md:h-120 md:w-100 relative mx-auto hover:shadow-2xl hover:shadow-black hover:cursor-pointer">
-                  <Image src="/conc.jpg" fill 
-                    sizes ="(max-width:600px) 6vw, (max-width: 1200px) 40vw, 30vw" 
-                    className="mx-auto my-4 rounded" alt="planning" />
+                <Link href="/listings">
+                  <div className="w-60 h-52 md:h-120 md:w-100 relative mx-auto hover:shadow-2xl hover:shadow-black hover:cursor-pointer">
+                    <Image src="/conc.jpg" fill 
+                      sizes ="(max-width:600px) 6vw, (max-width: 1200px) 40vw, 30vw" 
+                      className="mx-auto my-4 rounded" alt="planning" />
                   </div>
+                </Link>
                   <p className="text-white mt-3">Photo by:Pierre Châtel-Innocenti on <a href="https://unsplash.com/de/fotos/LSSr-EruRb0"></a></p>
               </div>
             </div>
