@@ -28,7 +28,7 @@ export default function Register(){
             method: "POST",
             body: JSON.stringify(registerIn)
             })
-            .then(response => response.json())
+            .then(response => console.log(response.json()))
             .then(data => console.log(data))
         }
 
