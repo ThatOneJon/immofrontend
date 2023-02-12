@@ -24,18 +24,21 @@ const[logRes, setLogRes] = React.useState(null)
     }
 
    async function submit(){
-
         await fetch("https://immpapi.onrender.com/api/login",{
             method: "post",
+            credentials: 'include',
             headers:{
                 'Content-Type': 'application/json',
-                'Accept': 'application/json'
+                //'Accept': 'application/json'
            },
             body: JSON.stringify(loginD)
         })
             .then(response => response.json())
             .then(data => {
                 console.log(data)
+                if(data.errCatch){
+                    console.log(JSON.stringify(data.errCatch))
+                }
                 data.err ? (setLogRes(data.err)) : setLogRes(data.message)
         })
         setLoginD({
