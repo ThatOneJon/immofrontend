@@ -7,7 +7,7 @@ import { FaLock, FaLockOpen } from 'react-icons/fa'
 import{RxAvatar} from "react-icons/rx"
 import Login from "./login"
 import Register from "./register"
-
+import Logout from './logout'
 
 export default function RootLayout({ children }) {
 
@@ -48,6 +48,7 @@ export default function RootLayout({ children }) {
                       <li className=" px-4 py-1 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white hover:cursor-pointer" onClick={() =>{setRenderRegister(p => !p), setRenderLogin(false)}}>Register</li>
                       { renderLogin && <Login/>}
                       {renderRegister && <Register />}
+                      <li className=" px-4 py-1 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white hover:cursor-pointer" ><Logout login={(v) => setRenderLogin(v)} register={(v) => setRenderRegister(v) } /> </li>
                     </ul>
                   </div>
                 </ul>
