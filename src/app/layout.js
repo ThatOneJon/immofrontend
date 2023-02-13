@@ -15,6 +15,25 @@ export default function RootLayout({ children }) {
   const[loginMenu, setLoginMenu] = React.useState(false)
   const[renderLogin, setRenderLogin] =React.useState(false)
   const[renderRegister, setRenderRegister] =React.useState(false)
+  const[isAuthenticated, setIsAuthenticated] = React.useState(null)
+
+  React.useEffect( () =>{
+     fetch("https://immpapi.onrender.com/api/loginstatus",{
+      method: "get",
+      credentials: 'include',
+      headers:{
+          'Content-Type': 'application/json'
+          //'Accept': 'application/json'
+     }})
+      .then(response => response.json())
+      .then(json => {
+        try{
+          setIsAuthenticated(json)
+        }catch(error){
+          console.log("Error!" + error)
+        }
+      })
+  }, [])
 
   return (
     <html lang="en">
@@ -48,9 +67,10 @@ export default function RootLayout({ children }) {
                       <li className=" px-4 py-1 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white hover:cursor-pointer" onClick={() =>{setRenderRegister(p => !p), setRenderLogin(false)}}>Register</li>
                       { renderLogin && <Login/>}
                       {renderRegister && <Register />}
-                      <li className=" px-4 py-1 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white hover:cursor-pointer" ><Logout login={(v) => setRenderLogin(v)} register={(v) => setRenderRegister(v) } /> </li>
+                      <li className=" px-4 py-1 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white hover:cursor-pointer" ><Logout auth = {(v) => setIsAuthenticated(v)} login={(v) => setRenderLogin(v)} register={(v) => setRenderRegister(v) } /> </li>
                     </ul>
                   </div>
+                  { (isAuthenticated != null && isAuthenticated.username) ? <li>Hey, {isAuthenticated.username} ! </li> : <li> Welcome! </li>}
                 </ul>
               </div>
             </div>

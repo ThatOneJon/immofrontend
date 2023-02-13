@@ -1,16 +1,16 @@
 
 import {GoChecklist} from "react-icons/go"
 import { Suspense } from 'react';
+import CreateListing from "./newListing";
 
 function Loading() {
     return <h2>🌀 Loading...</h2>;
   }
-
 export default async function Listings(){
+
     try{
     const listings = await fetch("https://immpapi.onrender.com/api/listings")
     const listJsons = await listings.json()
-    console.log(listJsons)
 
     return(
         <Suspense fallback={<Loading />} >
@@ -29,7 +29,7 @@ export default async function Listings(){
                 )})
             }
             </div>
-            <p className="text-center font-bold text-4xl mt-5 py-2">Login to add your own listings...</p>
+            <CreateListing />
         </Suspense>
         )
     }
