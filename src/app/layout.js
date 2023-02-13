@@ -16,6 +16,7 @@ export default function RootLayout({ children }) {
   const[renderLogin, setRenderLogin] =React.useState(false)
   const[renderRegister, setRenderRegister] =React.useState(false)
   const[isAuthenticated, setIsAuthenticated] = React.useState(null)
+  const[authentication, setAuthentication] = React.useState(false)
 
   React.useEffect( () =>{
      fetch("https://immpapi.onrender.com/api/loginstatus",{
@@ -33,7 +34,8 @@ export default function RootLayout({ children }) {
           console.log("Error!" + error)
         }
       })
-  }, [])
+  }, [authentication])
+  console.log(authentication)
 
   return (
     <html lang="en">
@@ -65,9 +67,9 @@ export default function RootLayout({ children }) {
                     <ul className={`${ loginMenu ? "flex" : "hidden"}  text-gray-700 dark:text-gray-200 px-2`}>
                       <li className=" px-5 py-1 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white hover:cursor-pointer" onClick={() =>{setRenderLogin(p => !p), setRenderRegister(false)}}>Login</li>
                       <li className=" px-4 py-1 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white hover:cursor-pointer" onClick={() =>{setRenderRegister(p => !p), setRenderLogin(false)}}>Register</li>
-                      { renderLogin && <Login/>}
+                      { renderLogin && <Login auth = {(v) => setAuthentication(v)} />}
                       {renderRegister && <Register />}
-                      <li className=" px-4 py-1 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white hover:cursor-pointer" ><Logout auth = {(v) => setIsAuthenticated(v)} login={(v) => setRenderLogin(v)} register={(v) => setRenderRegister(v) } /> </li>
+                      <li className=" px-4 py-1 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white hover:cursor-pointer" ><Logout authTr={(v) => setAuthentication(v)} auth = {(v) => setIsAuthenticated(v)} login={(v) => setRenderLogin(v)} register={(v) => setRenderRegister(v) } /> </li>
                     </ul>
                   </div>
                   { (isAuthenticated != null && isAuthenticated.username) ? <li>Hey, {isAuthenticated.username} ! </li> : <li> Welcome! </li>}

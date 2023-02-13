@@ -1,7 +1,7 @@
 import React from "react"
 
 
-export default function Login(){
+export default function Login({auth}){
 
 const[loginD, setLoginD] = React.useState({
     email : "",
@@ -35,7 +35,6 @@ const[logRes, setLogRes] = React.useState(null)
         })
             .then(response => response.json())
             .then(data => {
-                console.log(data)
                 if(data.errCatch){
                     console.log(JSON.stringify(data.errCatch))
                 }
@@ -45,6 +44,7 @@ const[logRes, setLogRes] = React.useState(null)
             email : "",
             password : ""
         })
+        auth(true)
     }
 
     return(
