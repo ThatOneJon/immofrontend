@@ -1,7 +1,7 @@
 import React from "react"
 
 
-export default function Login({auth}){
+export default function Login({auth, rlogin}){
 
 const[loginD, setLoginD] = React.useState({
     email : "",
