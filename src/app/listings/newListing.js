@@ -54,8 +54,17 @@ export default function CreateListing(){
             }
             data.err ? (setLogRes(data.err)) : setLogRes(data.message)
         })
+        setFormData({
+            title:"",
+            squareMeters:"",
+            price:"",
+            description: "",
+            city:"",
+            image:"",
+        })
+        location.reload()
     }
-
+    // ------------------------------------------------------------------------
     React.useEffect( () =>{
         fetch("https://immpapi.onrender.com/api/loginstatus",{
          method: "get",
@@ -82,8 +91,9 @@ export default function CreateListing(){
         )
         
      }else if(isAuthenticated.error){
+        console.log(isAuthenticated.error)
         return(
-            <p className="text-center font-bold text-4xl mt-5 py-2">{isAuthenticated.error}</p>
+            <p className="text-center font-bold text-4xl mt-5 py-2">Not logged in: {isAuthenticated.error.message}!</p>
         )
 
      }else if(isAuthenticated.username){
@@ -92,7 +102,7 @@ export default function CreateListing(){
             <div className=" my-10 py-5 grid grid-cols-1 lg:w-1/3 mx-auto border-2 border-black rounded p-4">
                 <h1 className="text-center font-bold text-4xl" >Create your listing here:</h1>
                 <h2 className="mx-auto mt-10 text-2xl">Your Title</h2>
-                <input type="text" className="border-2 border-gray-300 rounded mt-3 p-1" name="title" onChange={(event) => handleChange(event)} value={formData.title} placeholder="Short titles work best ..." />
+                <input type="text" className="border-2 border-gray-300 rounded mt-3 p-1" name="title" onChange={(event) => handleChange(event)} value={formData.title} placeholder="Short titles work best ..."  />
                 <h2 className="mx-auto mt-10 text-2xl">Price in Dollars</h2>
                 <input type="text" className="border-2 border-gray-300 rounded mt-3 p-1" name="price" onChange={(event) => handleChange(event)} value ={formData.price} placeholder = "$$$" />
                 <h2 className="mx-auto mt-10 text-2xl">Square Meters</h2>
@@ -104,6 +114,7 @@ export default function CreateListing(){
                 <h2 className="mx-auto mt-10 text-2xl">Link to an image</h2>
                 <input type="text" className="border-2 border-gray-300 rounded mt-3 mb-5 p-1" name="img" onChange={(event) => handleChange(event)}  value ={formData.image} placeholder="Valid link to an external image..." />
                 <button className="bg-slate-900 text-white rounded w-1/4 mx-auto p-3 font-bold hover:bg-slate-600 my-5" onClick={submit}>Submit!</button>
+
             </div>
             </>
         )
