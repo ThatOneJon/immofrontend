@@ -35,7 +35,6 @@ export default function RootLayout({ children }) {
         }
       })
   }, [authentication])
-  console.log(authentication)
 
   return (
     <html lang="en">
