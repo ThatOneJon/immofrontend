@@ -93,7 +93,7 @@ export default function CreateListing(){
      }else if(isAuthenticated.error){
         console.log(isAuthenticated.error)
         return(
-            <p className="text-center font-bold text-4xl mt-5 py-2">Not logged in: {isAuthenticated.error.message}!</p>
+            <p className="text-center font-bold text-4xl mt-5 py-2">Not logged in: {isAuthenticated.error.message}! Removing and adding is only possible, if logged in!</p>
         )
 
      }else if(isAuthenticated.username){

@@ -24,15 +24,25 @@ export default function Profile(){
               }
             })
     }, [])
-    console.log(loginStatus)
+    console.log(loginStatus.error)
 
     let display = <h1 className="font-bold text-center text-3xl mt-10">Loading...</h1>
+
+    if(loginStatus.error){
+        display= 
+        <div className="mx-auto lg:w-1/6 text-center flex flex-col align-middle justify-center text-xl">
+        <SkullBlack src="/skullBlack.png" width="400" height="200" alt="skull" className="rounded-full" />
+        <p className="font-bold underline">{loginStatus.error.name}</p> 
+        <p>You are not logged in! </p>
+    </div>
+    }
+
     if(loginStatus.message){
         display = 
         <div className="mx-auto lg:w-1/6 text-center flex flex-col align-middle justify-center text-xl">
             <SkullBlack src="/skullBlack.png" width="400" height="200" alt="skull" className="rounded-full" />
             <p className="font-bold underline">{loginStatus.message}</p> 
-            <p>You are not logged in! </p>
+            <p>You are not logged in!</p>
         </div>
     }else if(loginStatus.username){
         display = 
