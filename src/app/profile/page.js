@@ -24,7 +24,6 @@ export default function Profile(){
               }
             })
     }, [])
-    console.log(loginStatus.error)
 
     let display = <h1 className="font-bold text-center text-3xl mt-10">Loading...</h1>
 
